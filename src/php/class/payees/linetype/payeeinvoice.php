@@ -74,12 +74,12 @@ class payeeinvoice extends \Linetype
 
     public function get_suggested_values()
     {
-        $parties = get_values('payee', 'payee');
+        $payees = get_values('payee', 'payee');
 
-        sort($parties);
+        sort($payees);
 
         return [
-            'payee' => $payee,
+            'payee' => $payees,
         ];
     }
 
