@@ -1,2 +1,2 @@
 # payees
-Blends Plugin for Payees
+Payees package for Blends
