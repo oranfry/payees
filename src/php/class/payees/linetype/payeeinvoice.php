@@ -72,9 +72,9 @@ class payeeinvoice extends \Linetype
         ];
     }
 
-    public function get_suggested_values()
+    public function get_suggested_values($token)
     {
-        $payees = get_values('payee', 'payee');
+        $payees = get_values($token, 'payee', 'payee');
 
         sort($payees);
 

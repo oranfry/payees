@@ -5,9 +5,6 @@ class payeeaccounts extends \Blend
 {
     public function __construct()
     {
-        $payees = get_values('payee', 'payee');
-        sort($payees);
-
         $this->label = 'Accounts';
         $this->linetypes = ['payeeinvoice', 'transaction',];
         $this->showass = ['list', 'graph',];
@@ -30,7 +27,12 @@ class payeeaccounts extends \Blend
                 'name' => 'payee',
                 'type' => 'text',
                 'main' => true,
-                'filteroptions' => $payees,
+                'filteroptions' => function($token) {
+                    $payees = get_values($token, 'payee', 'payee');
+                    sort($payees);
+
+                    return $payees;
+                },
             ],
             (object) [
                 'name' => 'description',
@@ -54,13 +56,6 @@ class payeeaccounts extends \Blend
                 'name' => 'broken',
                 'type' => 'class',
                 'default' => '',
-            ],
-        ];
-        $this->filters = [
-            (object) [
-                'field' => 'payee',
-                'cmp' => '=',
-                'value' => $payees,
             ],
         ];
     }
