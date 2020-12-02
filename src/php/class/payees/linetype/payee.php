@@ -22,8 +22,14 @@ class payee extends \Linetype
         ];
 
         $this->unfuse_fields = [
-            '{t}.payee' => ':{t}_payee',
-            '{t}.name' => ':{t}_name',
+            '{t}.payee' => (object) [
+                'expression' => ':{t}_payee',
+                'type' => 'varchar(40)',
+            ],
+            '{t}.name' => (object) [
+                'expression' => ':{t}_name',
+                'type' => 'varchar(255)',
+            ],
         ];
     }
 

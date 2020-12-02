@@ -65,10 +65,22 @@ class payeeinvoice extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.date' => ':{t}_date',
-            '{t}.payee' => ':{t}_payee',
-            '{t}.amount' => ':{t}_amount',
-            '{t}.description' => ':{t}_description',
+            '{t}.date' => (object) [
+                'expression' => ':{t}_date',
+                'type' => 'date',
+            ],
+            '{t}.payee' => (object) [
+                'expression' => ':{t}_payee',
+                'type' => 'varchar(40)',
+            ],
+            '{t}.amount' => (object) [
+                'expression' => ':{t}_amount',
+                'type' => 'decimal(10,2)',
+            ],
+            '{t}.description' => (object) [
+                'expression' => ':{t}_description',
+                'type' => 'varchar(255)',
+            ],
         ];
     }
 
