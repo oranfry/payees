@@ -13,11 +13,6 @@ class payeeaccounts extends \Blend
         $this->cum = true;
         $this->fields = [
             (object) [
-                'name' => 'icon',
-                'type' => 'icon',
-                'derived' => true,
-            ],
-            (object) [
                 'name' => 'date',
                 'type' => 'date',
                 'groupable' => true,
