@@ -9,27 +9,21 @@ class payee extends \Linetype
         $this->table = 'payee';
 
         $this->fields = [
-            (object) [
-                'name' => 'payee',
-                'type' => 'text',
-                'fuse' => '{t}.payee',
-            ],
-            (object) [
-                'name' => 'name',
-                'type' => 'text',
-                'fuse' => '{t}.name',
-            ],
+            'payee' => function ($records) {
+                return $records['/']->payee;
+            },
+            'name' => function ($records) {
+                return $records['/']->name;
+            },
         ];
 
         $this->unfuse_fields = [
-            '{t}.payee' => (object) [
-                'expression' => ':{t}_payee',
-                'type' => 'varchar(40)',
-            ],
-            '{t}.name' => (object) [
-                'expression' => ':{t}_name',
-                'type' => 'varchar(255)',
-            ],
+            'payee' => function($line, $oldline) {
+                return $line->payee;
+            },
+            'name' => function($line, $oldline) {
+                return $line->name;
+            },
         ];
     }
 
