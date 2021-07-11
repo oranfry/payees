@@ -55,7 +55,7 @@ class payeeinvoice extends \Linetype
                 return $line->amount;
             },
             'description' => function($line, $oldline) {
-                return $line->description;
+                return @$line->description;
             },
         ];
     }
