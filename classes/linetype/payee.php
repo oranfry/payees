@@ -2,26 +2,23 @@
 
 namespace payees\linetype;
 
+use simplefields\traits\SimpleFields;
+
 class payee extends \jars\Linetype
 {
+    use SimpleFields;
+
     function __construct()
     {
         $this->table = 'payee';
 
-        $this->fields = [
-            'payee' => fn ($records) => $records['/']->payee,
-            'name' => fn ($records) => $records['/']->name,
-        ];
-
-        $this->unfuse_fields = [
-            'payee' => fn ($line, $oldline) => $line->payee,
-            'name' => fn ($line, $oldline) => $line->name,
-        ];
+        $this->simple_string('payee');
+        $this->simple_string('name');
     }
 
-    function validate($line)
+    function validate($line): array
     {
-        $errors = [];
+        $errors = parent::validate($line);
 
         if (!@$line->payee) {
             $errors[] = 'no payee';

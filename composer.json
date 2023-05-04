@@ -1,9 +1,12 @@
 {
-    "name": "oranfry/payees",
-    "version": "1.0.0",
     "autoload": {
         "psr-4": {
             "payees\\": "classes"
         }
-    }
+    },
+    "name": "oranfry/payees",
+    "require": {
+        "oranfry/simple-fields": "*"
+    },
+    "version": "1.0.0"
 }
