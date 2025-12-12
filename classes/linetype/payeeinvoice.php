@@ -22,6 +22,15 @@ class payeeinvoice extends \jars\Linetype
                 return 'no user';
             }
         };
+
+        $this->children = [
+            (object) [
+                'linetype' => 'payeeinvoiceline',
+                'property' => 'lines',
+                'tablelink' => 'payeeinvoice_line',
+                'only_parent' => 'payeeinvoice_id',
+           ],
+        ];
     }
 
     public function validate($line): array
