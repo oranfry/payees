@@ -1,6 +1,6 @@
 <?php
 
-namespace customers\linetype;
+namespace payees\linetype;
 
 use simplefields\traits\SimpleFields;
 
