@@ -17,6 +17,7 @@ class payeeinvoiceline extends \jars\Linetype
         $this->simple_float('amount', 2);
 
         $this->borrow['date'] = fn ($line): ?string => @$line->invoice->date;
+        $this->borrow['invoice_external_id'] = fn ($line): ?string => @$line->invoice->external_id;
 
         $this->inlinelinks[] = (object) [
             'linetype' => 'payeeinvoice',
