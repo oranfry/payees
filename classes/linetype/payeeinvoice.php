@@ -18,12 +18,6 @@ class payeeinvoice extends \jars\Linetype
         $this->simple_string('description');
         $this->simple_float('amount', 2);
 
-        $this->fields['broken'] = function ($records) {
-            if (!@$records['/']->user) {
-                return 'no user';
-            }
-        };
-
         $this->children = [
             (object) [
                 'linetype' => 'payeeinvoiceline',
