@@ -19,8 +19,8 @@ class payeeinvoiceline extends \jars\Linetype
         $this->borrow['date'] = fn ($line): ?string => @$line->invoice->date;
 
         $this->inlinelinks[] = (object) [
-            'linetype' => 'payeerinvoice',
-            'tablelink' => 'payeerinvoice_line',
+            'linetype' => 'payeeinvoice',
+            'tablelink' => 'payeeinvoice_line',
             'property' => 'invoice',
             'reverse' => true,
             'orphanable' => true,
