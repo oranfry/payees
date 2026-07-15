@@ -17,6 +17,7 @@ class payeeinvoice extends \jars\Linetype
         $this->simple_string('external_id');
         $this->simple_string('description');
         $this->simple_float('amount', 2);
+        $this->simple_boolean('bears_gst');
 
         $this->children = [
             (object) [
