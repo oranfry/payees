@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "payees\\": "classes"
+            "OranFry\\Payees\\Linetypes\\": ""
         }
     },
     "name": "oranfry/payees",

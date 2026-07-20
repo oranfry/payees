@@ -1,10 +1,10 @@
 <?php
 
-namespace payees\linetype;
+namespace OranFry\Payees\Linetypes;
 
-use simplefields\traits\SimpleFields;
+use OranFry\SimpleFields\Traits\SimpleFields;
 
-class payeeinvoice extends \jars\Linetype
+class PayeeInvoice extends \OranFry\Jars\Core\Linetype
 {
     use SimpleFields;
 
